@@ -12,4 +12,8 @@ export class ConsumptionService {
   getConsumptions() {
     return this.http.get(environment.api + 'consumptions');
   }
+
+  getNumberComparison() {
+    return this.http.get(environment.api + 'numberByType');
+  }
 }

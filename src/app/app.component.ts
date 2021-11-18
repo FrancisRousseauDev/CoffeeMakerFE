@@ -7,29 +7,13 @@ import {Color, LegendPosition, ScaleType} from "@swimlane/ngx-charts";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-
-  single = [
-    {
-      "name": "Germany",
-      "value": 8940000
-    },
-    {
-      "name": "USA",
-      "value": 5000000
-    },
-    {
-      "name": "France",
-      "value": 7200000
-    },
-    {
-      "name": "UK",
-      "value": 6200000
-    }
-  ];
-
+export class AppComponent implements OnInit {
   title = 'coffee-api-FE';
+
   consumption: any[] = []
+  numbersComparison: any[] = []
+
+
   view: [number, number] = [700, 400];
 
   // options
@@ -43,26 +27,15 @@ export class AppComponent implements OnInit{
     name: 'vivid',
     selectable: true,
     group: ScaleType.Ordinal,
-    domain: [
-      '#647c8a',
-      '#3f51b5',
-      '#2196f3',
-      '#00b862',
-      '#afdf0a',
-      '#a7b61a',
-      '#f3e562',
-      '#ff9800',
-      '#ff5722',
-      '#ff4514'
-    ]
+    domain: ['#5AA454', '#BB86FC', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
   }
 
   constructor(private consumptionService: ConsumptionService) {
   }
 
   ngOnInit(): void {
-    this.consumptionService.getConsumptions().subscribe((x) => {
-      this.consumption = (x as any[])
+    this.consumptionService.getNumberComparison().subscribe((x) => {
+      this.numbersComparison = (x as any[])
     })
   }
 

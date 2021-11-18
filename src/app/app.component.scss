@@ -1,0 +1,45 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-icon {
+  width: 10px;
+}
+
+.titleBox {
+  background-color: #1b1e27;
+  color: white;
+  display: flex;
+  .title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+:host ::ng-deep .pie-label {
+  color: white!important;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 2%;
+}
+
+.chart {
+  flex: 1 1 22px;
+  margin: 1% 1%;
+  border-radius: 25px 25px 5px 4px;
+}
+.chartPosition {
+  margin-left: auto;
+  display: flex;
+  margin-right: auto;
+}
+ngx-charts-pie-chart, ngx-charts-pie-grid {
+  margin-left: auto;
+  display: flex;
+  margin-right: auto;
+}

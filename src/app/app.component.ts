@@ -12,9 +12,11 @@ export class AppComponent implements OnInit {
 
   consumption: any[] = []
   numbersComparison: any[] = []
+  dateInfo: any[] = []
 
 
   view: [number, number] = [350 , 250];
+  viewBig: [number, number] = [700 , 450];
 
   // options
   gradient: boolean = true;
@@ -27,7 +29,7 @@ export class AppComponent implements OnInit {
     name: 'vivid',
     selectable: true,
     group: ScaleType.Ordinal,
-    domain: ['#5AA454', '#BB86FC', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
+    domain: ['#A40CC9', '#BB86FC', '#0C98C9', '#7aa3e5', '#a8385d', '#aae3f5']
   }
 
   constructor(private consumptionService: ConsumptionService) {
@@ -36,6 +38,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.consumptionService.getNumberComparison().subscribe((x) => {
       this.numbersComparison = (x as any[])
+    })
+
+    this.consumptionService.getDateInfo().subscribe((x) => {
+      this.dateInfo = (x as any[])
     })
   }
 

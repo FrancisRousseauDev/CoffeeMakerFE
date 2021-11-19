@@ -16,4 +16,8 @@ export class ConsumptionService {
   getNumberComparison() {
     return this.http.get(environment.api + 'numberByType');
   }
+
+  getDateInfo() {
+    return this.http.get(environment.api + 'date-chart');
+  }
 }

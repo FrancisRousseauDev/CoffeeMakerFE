@@ -36,7 +36,7 @@ mat-toolbar {
 }
 .chartPosition {
   margin-left: auto;
-  display: flex;
+  display: table;
   margin-right: auto;
 }
 ngx-charts-pie-chart, ngx-charts-pie-grid {

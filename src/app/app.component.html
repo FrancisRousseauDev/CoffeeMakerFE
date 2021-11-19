@@ -42,7 +42,29 @@
     </div>
 
   </div>
+</div>
 
+
+<div class="flex">
+
+  <div class="areachart-wrapper dark chart">
+    <div class="chartPosition">
+      <ngx-charts-line-chart
+        [view]="viewBig"
+        [scheme]="colorScheme"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxis]="true"
+        [yAxis]="true"
+        [xAxisLabel]="'Date'"
+        [yAxisLabel]="'Count'"
+        [timeline]="true"
+        [results]="dateInfo"
+      >
+      </ngx-charts-line-chart>
+    </div>
+
+  </div>
 </div>
 
 <router-outlet></router-outlet>

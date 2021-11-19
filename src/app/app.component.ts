@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   numbersComparison: any[] = []
 
 
-  view: [number, number] = [700, 400];
+  view: [number, number] = [350 , 250];
 
   // options
   gradient: boolean = true;

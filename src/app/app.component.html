@@ -12,59 +12,81 @@
   </button>
 </mat-toolbar>
 
+<div (window:resize)="onResize($event)">
+  <div class="flex">
 
-<div class="flex">
+    <div class="areachart-wrapper dark chart">
+      <div class="chartPosition">
+        <ngx-charts-pie-chart
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="numbersComparison"
+          [gradient]="gradient"
+          [legend]="showLegend"
+          [legendPosition]="legendPosition"
+          [labels]="showLabels"
+          [doughnut]="isDoughnut"
+        ></ngx-charts-pie-chart>
 
-  <div class="areachart-wrapper dark chart">
-    <div class="chartPosition">
-      <ngx-charts-pie-chart
-        [view]="view"
-        [scheme]="colorScheme"
-        [results]="numbersComparison"
-        [gradient]="gradient"
-        [legend]="showLegend"
-        [legendPosition]="legendPosition"
-        [labels]="showLabels"
-        [doughnut]="isDoughnut"
-      ></ngx-charts-pie-chart>
+      </div>
 
     </div>
 
+    <div class="areachart-wrapper dark chart">
+      <div class="chartPosition">
+        <ngx-charts-pie-grid
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="numbersComparison">
+        </ngx-charts-pie-grid>
+      </div>
+
+    </div>
   </div>
 
-  <div class="areachart-wrapper dark chart">
-    <div class="chartPosition">
-      <ngx-charts-pie-grid
-        [view]="view"
-        [scheme]="colorScheme"
-        [results]="numbersComparison">
-      </ngx-charts-pie-grid>
+
+  <div class="flex graphs2">
+
+    <div class="areachart-wrapper dark chart">
+      <div class="chartPosition spaceTop">
+        <ngx-charts-line-chart
+          [view]="viewBig"
+          [scheme]="colorScheme"
+          [showXAxisLabel]="true"
+          [showYAxisLabel]="true"
+          [xAxis]="true"
+          [yAxis]="true"
+          [xAxisLabel]="'Date'"
+          [yAxisLabel]="'Count'"
+          [timeline]="true"
+          [results]="dateInfo"
+        >
+        </ngx-charts-line-chart>
+      </div>
+
     </div>
 
+
+    <div class="areachart-wrapper dark chart">
+      <div class="chartPosition spaceTop">
+        <ngx-charts-line-chart
+          [view]="viewBig"
+          [scheme]="colorScheme"
+          [showXAxisLabel]="true"
+          [showYAxisLabel]="true"
+          [xAxis]="true"
+          [yAxis]="true"
+          [xAxisLabel]="'Date'"
+          [yAxisLabel]="'Count'"
+          [timeline]="true"
+          [results]="dateInfo"
+        >
+        </ngx-charts-line-chart>
+      </div>
+
+    </div>
   </div>
 </div>
 
-
-<div class="flex">
-
-  <div class="areachart-wrapper dark chart">
-    <div class="chartPosition">
-      <ngx-charts-line-chart
-        [view]="viewBig"
-        [scheme]="colorScheme"
-        [showXAxisLabel]="true"
-        [showYAxisLabel]="true"
-        [xAxis]="true"
-        [yAxis]="true"
-        [xAxisLabel]="'Date'"
-        [yAxisLabel]="'Count'"
-        [timeline]="true"
-        [results]="dateInfo"
-      >
-      </ngx-charts-line-chart>
-    </div>
-
-  </div>
-</div>
 
 <router-outlet></router-outlet>

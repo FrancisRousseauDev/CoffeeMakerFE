@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
 
   view: [number, number] = [350 , 250];
-  viewBig: [number, number] = [700 , 450];
+  viewBig: [number, number] = [350 , 450];
 
   // options
   gradient: boolean = true;
@@ -36,6 +36,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (document.body.offsetWidth > 1500) {
+      this.viewBig = [700, 450]
+    }
+    console.log(document.body.offsetWidth)
+
     this.consumptionService.getNumberComparison().subscribe((x) => {
       this.numbersComparison = (x as any[])
     })
@@ -43,6 +48,14 @@ export class AppComponent implements OnInit {
     this.consumptionService.getDateInfo().subscribe((x) => {
       this.dateInfo = (x as any[])
     })
+  }
+
+  onResize($event: any) {
+    if (document.body.offsetWidth > 1500) {
+      this.viewBig = [700, 450];
+    } else {
+      this.viewBig = [350 , 450];
+    }
   }
 
 }

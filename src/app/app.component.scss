@@ -32,7 +32,7 @@ mat-toolbar {
 .chart {
   flex: 1 1 22px;
   margin: 1% 1%;
-  border-radius: 25px 25px 5px 4px;
+  border-radius: 25px 25px 25px 22px;
 }
 .chartPosition {
   margin-left: auto;
@@ -43,4 +43,10 @@ ngx-charts-pie-chart, ngx-charts-pie-grid {
   margin-left: auto;
   display: flex;
   margin-right: auto;
+}
+.graphs2 {
+  padding-top: 0px!important;
+}
+.spaceTop {
+  margin-top: 70px;
 }
